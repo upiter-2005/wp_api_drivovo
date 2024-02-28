@@ -1,5 +1,6 @@
 const express = require("express");
 const cars = require("./routes/cars");
+const feed = require("./routes/feed");
 const cors = require("cors");
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors());
 // }
 
 app.use("/cars", cars);
+app.use("/feed", feed);
 
 const port = process.env.PORT || 9002;
 
