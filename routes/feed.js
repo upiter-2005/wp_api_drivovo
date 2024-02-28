@@ -26,8 +26,7 @@ router.get("/", async (req, res, next) => {
 
     const cars = {data}
     const tempArr = cars.data.results.filter( obj=> obj.properties.Status.status?.name === "Done")
-    // console.log(cars.data.results.length);
-    // console.log(cars.data.results);
+ 
    
 
     const root = create({ version: '1.0' })
@@ -75,15 +74,15 @@ router.get("/", async (req, res, next) => {
           const price = (parseFloat(maxPrice - last40) / 36).toFixed(0);
             console.log(tempArr[i]); 
             const item = container.ele('item');
-            item.ele('g:id').txt(tempArr[i]?.id).up();
-            item.ele('g:title').txt(tempArr[i]?.properties.car_name.rich_text[0]?.plain_text).up();
-            item.ele('g:description').txt(tempArr[i]?.properties.Text.rich_text[0]?.text.content).up();
-            item.ele('g:description').txt('in stock').up();
-            item.ele('g:condition').txt('new').up();
-            item.ele('g:price').txt(`${price} USD`).up();
-            item.ele('g:link').txt(`https://offer.drivovo.com/offer/${tempArr[i]?.properties.URL?.rich_text[0]?.plain_text}`).up();
-            item.ele('g:image_link').txt(tempArr[i]?.properties.Cover.files[0]?.file.url).up();
-            item.ele('g:brand').txt(tempArr[i]?.properties.car_brand.select?.name).up();
+            item.ele('id').txt(tempArr[i]?.id).up();
+            item.ele('title').txt(tempArr[i]?.properties.car_name.rich_text[0]?.plain_text).up();
+            item.ele('description').txt(tempArr[i]?.properties.Text.rich_text[0]?.text.content).up();
+            item.ele('description').txt('in stock').up();
+            item.ele('condition').txt('new').up();
+            item.ele('price').txt(`${price} USD`).up();
+            item.ele('link').txt(`https://offer.drivovo.com/offer/${tempArr[i]?.properties.URL?.rich_text[0]?.plain_text}`).up();
+            item.ele('image_link').txt(tempArr[i]?.properties.Cover.files[0]?.file.url).up();
+            item.ele('brand').txt(tempArr[i]?.properties.car_brand.select?.name).up();
             
          
         }
