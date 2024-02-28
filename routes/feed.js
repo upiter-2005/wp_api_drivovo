@@ -77,7 +77,7 @@ router.get("/", async (req, res, next) => {
             item.ele('id').txt(tempArr[i]?.id).up();
             item.ele('title').txt(tempArr[i]?.properties.car_name.rich_text[0]?.plain_text).up();
             item.ele('description').txt(tempArr[i]?.properties.Text.rich_text[0]?.text.content).up();
-            item.ele('description').txt('in stock').up();
+            item.ele('availability').txt('in stock').up();
             item.ele('condition').txt('new').up();
             item.ele('price').txt(`${price} USD`).up();
             item.ele('link').txt(`https://offer.drivovo.com/offer/${tempArr[i]?.properties.URL?.rich_text[0]?.plain_text}`).up();
