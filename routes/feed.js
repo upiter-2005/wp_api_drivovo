@@ -38,7 +38,7 @@ router.get("/", async (req, res, next) => {
       .ele('link').txt('https://drivovo.com').up()
       .ele('description').txt('Drivovo description').up();
 
-        for(let i = 0; i <= tempArr.length; i++)
+        for(let i = 1; i < tempArr.length; i++)
         {
 
           const startFund = (
