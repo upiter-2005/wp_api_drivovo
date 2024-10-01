@@ -80,7 +80,7 @@ router.get("/", async (req, res, next) => {
             item.ele('availability').txt('in stock').up();
             item.ele('condition').txt('new').up();
             item.ele('price').txt(`${price} USD`).up();
-            item.ele('link').txt(`https://offer.drivovo.com/offer/${tempArr[i]?.properties.URL?.rich_text[0]?.plain_text}`).up();
+            item.ele('link').txt(`https://offer.drivovo.com/car/${tempArr[i]?.properties.URL?.rich_text[0]?.plain_text}`).up();
             item.ele('image_link').txt(tempArr[i]?.properties.Cover.files[0]?.file.url).up();
             item.ele('brand').txt(tempArr[i]?.properties.car_brand.select?.name).up();
             
